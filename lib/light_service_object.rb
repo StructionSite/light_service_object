@@ -100,8 +100,8 @@ module LightServiceObject
         end
       end
       Dry::Monads.Success(result)
-    rescue Exception => error
-      Dry::Monads.Failure(error.message)
+    rescue StandardError => error
+      Dry::Monads.Failure(error)
     end
 
     def fail!(error)
